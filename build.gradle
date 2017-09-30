@@ -16,6 +16,11 @@ tasks.withType(JavaExec) {
     enableAssertions true
 }
 
+task execute(type:JavaExec) {
+   main = mainClass
+   classpath = sourceSets.main.runtimeClasspath
+}
+
 // NetBeans will automatically add "run" and "debug" tasks relying on the
 // "mainClass" property. You may however define the property prior executing
 // tasks by passing a "-PmainClass=<QUALIFIED_CLASS_NAME>" argument.
